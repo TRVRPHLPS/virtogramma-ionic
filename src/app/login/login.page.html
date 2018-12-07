@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar style="background-color:black">
+    <ion-buttons style="color:white;" slot="start">
+      <ion-menu-button style="color:white;" ></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="background-color:#282828;color: white;line-height:35px;">
+      Вход
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="text-align:center;" padding >
+  <ion-item style="margin:auto;">
+    <ion-label>Ваш Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin:auto;">
+    <ion-label>Ваш пароль</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+  <ion-button color="warning" style="margin:auto;" (click)="login()">Войти</ion-button>
+  <ion-button color="warning" style="margin:auto;" (click)="registration()">РЕГИСТРАЦИЯ</ion-button>
+</div>
+</ion-content>

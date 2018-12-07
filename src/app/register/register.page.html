@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar style="background-color:black">
+    <ion-buttons style="color:white;" slot="start">
+      <ion-back-button style="color:white;" defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="background-color:#282828;color: white;line-height:35px;">
+      Регистрация
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Ваш Email</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ваш пароль</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ваше Имя</ion-label>
+    <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ваша Фамилия</ion-label>
+    <ion-input type="text" [(ngModel)]="user.secondName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ваш Телефон</ion-label>
+    <ion-input type="text" [(ngModel)]="user.Phone"></ion-input>
+  </ion-item>
+
+  <ion-button color=warning (click)="register()">Регистрация</ion-button>
+
+
+  <ion-button color=warning (click)="loginFacebook()">Facebook</ion-button>
+
+</ion-content>

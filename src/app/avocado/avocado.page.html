@@ -1,0 +1,251 @@
+<ion-header>
+  <ion-toolbar style="background-color:black">
+    <ion-buttons style="color:white;" slot="start">
+      <ion-back-button style="color:white;" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+      <ion-title style="background-color:#282828;color: white;line-height:35px;">
+        AVOCADO
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!--<iframe width="100%" height="100%" frameborder="0" src="https://virtogramma.com/avocado"></iframe>-->
+
+
+<iframe width='100%' style="height:50vh" src='https://my.matterport.com/show/?m=uKirXzUCvq8&play=1&lang=ru' frameborder='0' allowfullscreen allow='vr'></iframe>
+
+<ion-slides padding>
+  <ion-slide>
+    <ion-item>
+    <ion-input required clearInput [(ngModel)]="zakaz.name" placeholder="Ваше Имя"></ion-input>
+    </ion-item>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-item>
+    <ion-input required clearInput [(ngModel)]="zakaz.phone" type = "tel" placeholder = "Ваш Телефон"></ion-input>
+    </ion-item>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-item>
+    <ion-input required clearInput [(ngModel)]="zakaz.table" type="number" maxlength="2" placeholder="Номер Столика"></ion-input>
+    </ion-item>
+  </ion-slide>
+
+  <ion-slide>
+    <ion-item>
+    <ion-input required clearInput [(ngModel)]="zakaz.guests" type="number" maxlength="2" placeholder="Количество Гостей"></ion-input>
+    </ion-item>
+  </ion-slide>
+
+  <ion-slide>
+   <ion-item>
+    <ion-label>Дата резерва</ion-label>
+    <ion-datetime displayFormat="DD MMM" monthShortNames='Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря' [(ngModel)]="myDate"></ion-datetime>
+   </ion-item>
+  </ion-slide>
+
+  <ion-slide>
+   <ion-item>
+    <ion-label>Время резерва</ion-label>
+    <ion-datetime required hourValues="09,10,11,12,13,14,15,16,17,18,19,20,21,22" [(ngModel)]="zakaz.time" displayFormat="HH:mm"></ion-datetime>
+   </ion-item>
+  </ion-slide>
+</ion-slides>
+<div *ngIf="presentDiv" align="center" color="warning">
+<ion-label text-center color="black">Спасибо за Ваш заказ!</ion-label>
+</div>
+<div *ngIf="hideMe" align="center">
+<ion-button (click)="pervSlide()" color="black" style="color:white;">Назад</ion-button>
+<ion-button type="submit" (click)="nextSlide()" color="black" style="color:white;">Далее</ion-button>
+</div>
+
+
+
+
+<ion-list padding>
+  <ion-item text-center href="https://goo.gl/maps/YLhX36AAGC22">
+    <ion-icon color="warning" name="pin"></ion-icon>
+    <ion-label>УЛ. ИНСТИТУТСКАЯ 27/6</ion-label>
+  </ion-item>
+  <ion-item text-center href="tel:095%20434%204788" >
+    <ion-icon color="warning" name="call"></ion-icon>
+    <ion-label>+38(095)-434-47-88</ion-label>
+  </ion-item>
+</ion-list>
+
+<h2 text-center block ion-text style="background-color:#282828;color: white;line-height:35px;font-size:1.1em;">ОПИСАНИЕ</h2>
+
+<ion-label text-center padding>“Ресторан АВОКАДО – это новое заведение в самом центре города, среди ключевых особенностей ресторана стоит отметить хорошую кухню и множество блюд с добавлением авокадо. Ресторан отлично подойдёт для лёгкого завтрака, деловой встречи на обед и для сытного ужина в компании друзей. Светлый позитивный интерьер первого зала и пастельные кофейные тона, используемые в оформлении интерьера во втром зале, позволят Вам выбрать уютный столик и отлично отдохнуть.”
+</ion-label>
+<div padding text-right>Фирменное Блюдо – Аво Биф</div>
+<div padding text-right>Средний Чек – 295грн</div>
+<div padding text-right>Оценка VIRTOGRAMMA – 4/5</div>
+
+<h2 text-center block ion-text style="background-color:#282828;color: white;line-height:35px;font-size:1.1em;">ГАЛЕРЕЯ</h2>
+
+<div>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="padding-top: 0;padding-bottom:0;">
+          <iframe style="height:40vh;width:100%;" src="https://www.youtube.com/embed/uAco5MUw2BU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col style="padding-top: 0;padding-bottom:0;padding-right:2.5px;">
+            <ion-img cache="true" src="https://virtogramma.com/wp-content/uploads/2018/08/a4.jpg"></ion-img>
+          </ion-col>
+          <ion-col style="padding-top: 0;padding-bottom:0;padding-left: 2.5px;">
+            <ion-img cache="true"  src="https://virtogramma.com/wp-content/uploads/2018/08/a3.jpg"></ion-img>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="padding-top: 0;padding-bottom:0; padding-right:2.5px;" >
+          <ion-img cache="true" src="https://virtogramma.com/wp-content/uploads/2018/08/a4.jpg"></ion-img>
+        </ion-col>
+        <ion-col style="padding-top: 0;padding-bottom:0; padding-left: 2.5px;">
+          <ion-img cache="true"  src="https://virtogramma.com/wp-content/uploads/2018/08/a3.jpg"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</div>
+
+
+
+
+
+
+
+<h2 text-center block ion-text style="background-color:#282828;color: white;line-height:35px;font-size:1.1em;">МЕНЮ</h2>
+<ion-slides>
+  <ion-slide>
+<ion-label>
+<ion-item> ЗАВТРАКИ </ion-item>
+<ion-item> Гранола с Йогуртом – 69грн </ion-item>
+<ion-item>  (Овсянка, Орехи, Курага, Изюм, Мёд, Корица – 150/100г.) </ion-item>
+<ion-item> Фритата со Шпинатом и Томатами – 69грн </ion-item>
+<ion-item> (Куриное Яйцо, Сливки, Шпинат,Томаты Черри, Сыр Моцарелла – 230г.)</ion-item>
+<ion-item>  Творожный Пудингс Ягодным Соусом – 69грн </ion-item>
+<ion-item>  (Домашний Творог,Пасочный Корж, Ягоды – 210г.)</ion-item>
+</ion-label>
+ </ion-slide>
+
+  <ion-slide>
+   <ion-label>
+     <ion-item> ЗАВТРАКИ </ion-item>
+<ion-item> Гренки с Гуакамоле и Яйцом Пашот – 79грн </ion-item>
+<ion-item> (Тост Белый, Гуакамоле,Яйцо Куриное, Микс Салата – 160г.) </ion-item>
+<ion-item> Фитнес Микс – 99грн </ion-item>
+<ion-item> (Авокадо, Свежие Ягоды,Сыр Фета, Листья Шпината – 250г.)</ion-item>
+<ion-item> Авокадо Запеченое с Яйцом – 119грн </ion-item>
+<ion-item> (Авокадо, Куриное Яйцо,Сыр Пармезан – 270г.) </ion-item>
+<ion-item> Хумус с Овощами с Тостами – 119грн </ion-item>
+<ion-item> (Хумус, Овощи, Тосы – 335г.) </ion-item>
+   </ion-label>
+  </ion-slide>
+</ion-slides>
+
+<h2 text-center block ion-text style="background-color:#282828;color: white;line-height:35px;font-size:1.1em;">РЕЙТИНГ</h2>
+<div *ngIf="rivewNotUnlog">
+<ion-card>
+  <ion-card-content>
+    <div padding text-center> Чтобы оставить отзыв, войдите или зарегистрируйтесь! </div>
+    <div align="center">
+    	<ion-button color="black" style="color:white;"  routerLink="/login"> Войти </ion-button>
+      <ion-button color="black" style="color:white;"  routerLink="/register"> Зарегистрироваться </ion-button >
+      <!-- <button ion-button expand="block" (click)="loginFacebook()"><ion-icon name="logo-facebook"></ion-icon></button> -->
+    </div>
+  </ion-card-content>
+</ion-card>
+</div>
+
+<div *ngIf="reviewIog">
+<ion-card >
+  <ion-card-content style="font-size: 14.3px;">
+  <ion-input placeholder="Ваш Отзыв" [(ngModel)]="review.text"></ion-input>
+  <ion-grid style="font-family:Ubuntu;font-weight:bold;">
+    <ion-row >
+      <ion-col>
+          <div style="width: 130px;">
+            <ion-label>КУХНЯ</ion-label>
+            <div style="font-size:22px;">
+             <ion-icon style="padding:1px;" name="star" *ngFor="let num of [1,2,3,4,5]"
+             (click)="rate(num, kitch)" [ngStyle]="{color:getColor(num, kitch)}">
+             </ion-icon>
+            </div>
+          </div>
+    </ion-col>
+
+    <ion-col>
+      <div style="width: 130px;">
+        <ion-label>АТМОСФЕРА</ion-label>
+        <div style="font-size:22px;">
+          <ion-icon style="padding:1px;" name="star" *ngFor="let star of [1,2,3,4,5]"
+            (click)="rate(star,atmos)" [ngStyle]="{color:getColor(star,atmos)}">
+          </ion-icon>
+        </div>
+      </div>
+    </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div style="width: 130px;">
+      <ion-label>ОБСЛУЖИВАНИЕ</ion-label>
+      <div  style="font-size:22px;">
+      <ion-icon style="padding:1px;" name="star" *ngFor="let star of [1,2,3,4,5]"
+          (click)="rate(star,serv)" [ngStyle]="{color:getColor(star, serv)}">
+      </ion-icon>
+      </div>
+         </div>
+         </ion-col>
+
+      <ion-col>
+        <div style="width: 130px;">
+          <ion-label>СТОИМОСТЬ</ion-label>
+          <div style="font-size:22px;">
+            <ion-icon style="padding:1px;" name="star" *ngFor="let star of [1,2,3,4,5]"
+            (click)="rate(star,price)" [ngStyle]="{color:getColor(star, price)}">
+      </ion-icon>
+      </div>
+    </div>
+    </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div style="width: 130px;">
+      <ion-label>РАСПОЛОЖЕНИЕ</ion-label>
+      <div style="font-size:22px;">
+      <ion-icon style="padding:1px;" name="star" *ngFor="let star of [1,2,3,4,5]"
+          (click)="rate(star,loc)" [ngStyle]="{color:getColor(star,loc)}">
+      </ion-icon>
+      </div>
+    </div>
+    </ion-col>
+
+
+    <ion-col>
+      <div style="width: 130px;">
+      <ion-label>ПАРКОВКА</ion-label>
+      <div style="font-size:22px;">
+      <ion-icon style="padding:1px;" name="star" *ngFor="let star of [1,2,3,4,5]"
+          (click)="rate(star,park)" [ngStyle]="{color:getColor(star,park)}">
+      </ion-icon>
+      </div>
+    </div>
+    </ion-col>
+    </ion-row>
+     </ion-grid>
+     <ion-button color="black" (click)="sendReview()"style="color:white;"> Отправить Отзыв </ion-button>
+  </ion-card-content>
+  </ion-card>
+</div>
+
+
+<!--<ion-label>ОСТАВЬТЕ ОТЗЫВ</ion-label>-->
+
+</ion-content>
